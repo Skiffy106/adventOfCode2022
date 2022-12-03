@@ -21,3 +21,25 @@ for calorieArray in elves2dArray:
     maxCalories = elfCalorieSum
 
 print(maxCalories)
+
+# ---------- End of Part 1 -------------
+# ---------- Begin of Part 2 -----------
+import sys
+ 
+# setting path
+sys.path.append('../adventOfCode2022')
+from utils.mergesort import *
+
+
+caloriesPerElf = [None] * len(elves2dArray)
+for i in range(len(elves2dArray)):
+  elfCalorieSum = 0
+  for j in range(len(elves2dArray[i])):
+    elfCalorieSum += int(elves2dArray[i][j])
+  caloriesPerElf[i] = elfCalorieSum
+
+caloriesPerElf = merge_sort(caloriesPerElf)
+lengthOfCPE = len(caloriesPerElf)
+
+# prints sum of top 3 calories
+print((caloriesPerElf[lengthOfCPE - 1] + caloriesPerElf[lengthOfCPE - 2] + caloriesPerElf[lengthOfCPE - 3]))
