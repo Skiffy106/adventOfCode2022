@@ -38,7 +38,7 @@ for i in range(len(elves2dArray)):
     elfCalorieSum += int(elves2dArray[i][j])
   caloriesPerElf[i] = elfCalorieSum
 
-caloriesPerElf = merge_sort(caloriesPerElf)
+caloriesPerElf.sort()
 lengthOfCPE = len(caloriesPerElf)
 
 # prints sum of top 3 calories
