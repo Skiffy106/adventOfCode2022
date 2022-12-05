@@ -64,3 +64,70 @@ for moveArray in file2dArray:
   sumPoints += calculateGameScore(moveArray[0], moveArray[1])
 
 print(sumPoints)
+
+# ---------- End of Part 1 -------------
+# ---------- Begin of Part 2 -----------
+
+def calculateGameScorePart2(opponent_move, game_end):
+  retScore = 0;
+  if (game_end == 'X'):
+    # game ends in loss
+    retScore += 0
+    if (opponent_move == 'A'):
+      # opponent chooses rock
+      # player chooses scissor
+      retScore += 3
+    elif (opponent_move == 'B'):
+      # opponent chooses paper
+      # player chooses rock
+      retScore += 1
+    elif (opponent_move == 'C'):
+      # opponent chooses scissors
+      # player chooses paper
+      retScore += 2
+    else:
+      print("Error on opponent move!")
+  
+  elif (game_end == 'Y'):
+    # game ends in draw
+    retScore += 3
+    if (opponent_move == 'A'):
+      # opponent chooses rock
+      # player chooses rock
+      retScore += 1
+    elif (opponent_move == 'B'):
+      # opponent chooses paper
+      # player chooses paper
+      retScore += 2
+    elif (opponent_move == 'C'):
+      # opponent chooses scissors
+      # player chooses scissors
+      retScore += 3
+    else:
+      print("Error on opponent move!")
+  
+  elif (game_end == 'Z'):
+    # game ends in win
+    retScore += 6
+    if (opponent_move == 'A'):
+      # opponent chooses rock
+      # player chooses paper
+      retScore += 2
+    elif (opponent_move == 'B'):
+      # opponent chooses paper
+      # player chooses scissors
+      retScore += 3
+    elif (opponent_move == 'C'):
+      # opponent chooses scissors
+      # player chooses rock
+      retScore += 1
+    else:
+      print("Error on opponent move!")
+  
+  return retScore
+
+sumPoints = 0;
+for moveArray in file2dArray:
+  sumPoints += calculateGameScorePart2(moveArray[0], moveArray[1])
+
+print(sumPoints)
