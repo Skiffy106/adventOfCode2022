@@ -24,12 +24,6 @@ print(maxCalories)
 
 # ---------- End of Part 1 -------------
 # ---------- Begin of Part 2 -----------
-import sys
- 
-# setting path
-sys.path.append('../adventOfCode2022')
-from utils.mergesort import *
-
 
 caloriesPerElf = [None] * len(elves2dArray)
 for i in range(len(elves2dArray)):
