@@ -1,4 +1,4 @@
-# Day 1 AdventOfCode 2022
+# Day 2 AdventOfCode 2022
 # 12/05/2022
 # Mason Tuttle
 
