@@ -26,3 +26,24 @@ for backpack in backpackArray:
   prioritySum += getPriority(ord(duplicate))
 
 print(prioritySum)
+
+# ---------- End of Part 1 -------------
+# ---------- Begin of Part 2 -----------
+
+prioritySum = 0
+for i in range(len(backpackArray)//3):
+  set1 = set(backpackArray[i * 3])
+  set2 = set(backpackArray[i * 3 + 1])
+  set3 = set(backpackArray[i * 3 + 2])
+  duplicate = set1.intersection(set2).intersection(set3).pop()
+  prioritySum += getPriority(ord(duplicate))
+
+print(prioritySum)
+
+# prioritySum = 0
+# for backpack in backpackArray:
+#   compartment1, compartment2 = backpack[:len(backpack)//2], backpack[len(backpack)//2:]
+#   set1 = set(compartment1)
+#   set2 = set(compartment2)
+#   duplicate = set1.intersection(set2).pop()
+#   prioritySum += getPriority(ord(duplicate))
